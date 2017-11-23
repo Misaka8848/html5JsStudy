@@ -2,7 +2,7 @@
 
 ## INDEX
 
-####chapter1-2
+####Chapter 1-2
 
 - [HTML标记和JS的关系](#HTML标记和JS的关系)
 - [加载顺序](#加载顺序)
@@ -11,8 +11,9 @@
 - [DOM](#DOM(Document Object Model))
 
 
+####Chapter 3
 
-
+- ​
 
 
 
@@ -54,12 +55,30 @@ var arrayName = new Array();
 
 ```
 
+#### 数组属性
+
+```javascript
+var arr1 = new Array();
+var ran1 = Math.floor(Math.random() * arr1.length);//数组的长度
+
+```
+
+
+
 ## 字符串加法
 
 
 
 ```javascript
 "String" + Integer = "StringInerger"
+
+```
+
+## Math库
+
+```javascript
+Math.random() //生成0-1之间的随机数
+Math.floor//去掉小数部分
 
 ```
 

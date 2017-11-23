@@ -5,6 +5,9 @@
 ####chapter1-2
 
 - [HTML标记和JS的关系](#HTML标记和JS的关系)
+- [加载顺序](#加载顺序)
+- [数组](#数组)
+- [字符串加法](字符串加法)
 - [DOM](#DOM(Document Object Model))
 
 
@@ -23,9 +26,12 @@ JS通过*DOM*来访问HTML标记
 
 具体方式有
 
-`.getElementById("Idname")`方法
+```javascript
+var Name = document.getElementById("idName")
 
-等...
+```
+
+
 
 
 
@@ -39,11 +45,23 @@ JS通过*DOM*来访问HTML标记
 
 
 
+## 数组
+
+#### 新建数组 
+
+```javascript
+var arrayName = new Array();
+
+```
+
+## 字符串加法
 
 
 
+```javascript
+"String" + Integer = "StringInerger"
 
-
+```
 
 
 

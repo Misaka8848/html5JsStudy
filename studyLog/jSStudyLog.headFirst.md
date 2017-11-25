@@ -238,7 +238,7 @@ var objectName = {                      //赋值的是引用
                alert(this.property1); 
            }
       };
-          this.method = function{
+          this.method = function(){
               alert(this.property);
           
           };

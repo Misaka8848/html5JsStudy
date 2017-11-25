@@ -226,17 +226,28 @@ var objectName = {                      //赋值的是引用
 
 ###工厂函数
 
-```javascript
-function ObjectName(property1,property2,property3){
-    this.property1;
-    this.property2;
-    this.property3;
-    this.method = function{
-        alert(this.property);
-    
-    };
-}
-```
+ ```javascript
+      function ObjectName(property1,property2,property3){			//创建工厂
+          this.property1 = ;
+          this.property2 = ;								    //工厂函数实际上是一个函数（废话。。）所                                                                以内部要用分号，区分于单个对象创建的逗号
+          this.property3 =  {                                  //属性可以是对象
+           property1 :"string",
+           property2 : integer,
+           property3 : [Array1,Array2],
+           method1 : function(){
+               alert(this.property1); 
+           }
+      };
+          this.method = function{
+              alert(this.property);
+          
+          };
+      }
+
+      var instance = new ObjectName(property1,property2,property3)  //创建实例并赋引用给变量
+       //所有的property都是必须的吗？
+      var time = new getDate().getTime //创建实例访问属性并赋值给变量
+ ```
 
 
 
@@ -244,11 +255,12 @@ function ObjectName(property1,property2,property3){
 
 ```javascript
 this的存在得以实现 objectName.method() 处理objectName的属性时无需传递参数在()中。
+创建实例后，实际上所有实例都共享着工厂函数里：1、属性名和key值的关系。2、方法的代码实现。//这样做增加了代码重用。
 ```
 
 
 
-### 调用
+### 调用属性或者方法
 
 ```javascript
 var property1 = name.property1;

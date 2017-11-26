@@ -11,11 +11,23 @@
 - [DOM](#DOM(Document Object Model))
 
 
-####[Chapter 3](#Chapter3)
+####[Chapter3: 事件和处理程序](#Chapter3)
 
 ####[Chapter4：函数、变量和对象](#Chapter4：函数、变量和对象)
 
-- 
+- [函数](#函数)
+
+- [对象](#对象)
+
+  ​
+
+####[Chapter5: Map API](#Chapter5: Map API)
+
+- [XMLHttpRequest](#XMLHttpRequest)
+- [URL](#URL)
+
+####[Chapter6: 通信 API](#Chapter6: 通信 API)
+
 
 
 
@@ -125,6 +137,30 @@ function handleButtonClick(){
     ul.appendChild(li);//添加子元素。
 }
 ```
+
+
+
+
+
+## 事件关联触发【重要】
+
+```javascript
+window.onload
+XMLHttpRequest.onload
+button.onclick
+```
+
+
+
+## onload
+
+XMLHttpRequest 对象的 onload 回调函数是在异步请求加载完成后所执行的函数，当JavaScript 监测到请求的数据全部传输完成后就会触发该函数。而 open() 函数设置异步请求的 method、URL 和同步方式等参数，执行 open() 后再执行 send() 函数才开始向服务器发送请求。
+
+还有一些误解需要澄清一下，
+
+1. window.onload 回调函数其实是在页面加载完成后（包括图片内容的显示）才会执行，并不是页面加载的等待过程中就执行。
+2. request.open() 并没有发送请求，只是设置一些参数，在 send() 时才会发送（注意不要漏写这条语句），发送后就会进入 readyState 监听状态，当 readyState 的值有改变就会执行 onreadystatechange 回调函数，当异请求的步数据接收完成（即 readyState 变为 4）后就会执行 onload 回调函数（注意仅在 XHR2 中有效）
+
 
 
 
@@ -253,10 +289,11 @@ var objectName = {                      //赋值的是引用
 
 ####关于`this`
 
-```javascript
-this的存在得以实现 objectName.method() 处理objectName的属性时无需传递参数在()中。
-创建实例后，实际上所有实例都共享着工厂函数里：1、属性名和key值的关系。2、方法的代码实现。//这样做增加了代码重用。
-```
+1. this的存在得以实现 objectName.method() 处理objectName的属性时无需传递参数在()中。
+
+2. 创建实例后，实际上所有实例都共享着工厂函数里：1、属性名和key值的关系。2、方法的代码实现。//这样做增加了代码重用。
+
+   ​
 
 
 
@@ -296,7 +333,51 @@ name.method1();                 //
 
 
 
+# Chapter5: Map API
 
+#Chapter6: 通信 API
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> master
+## XMLHttpRequest
+
+触发顺序：request.open -> request.send ->request.onload
+
+```javascript
+window.onload = function(){          //类似于main函数
+    var url = "http://";
+    var request = new XMLHttpRequest();
+    request.onload = function(){    //send request后触发
+        if(request.status == 200){  //成功取回数据
+          displayLuck(request.responseText);//取回的数据
+        }；
+    }
+    request.open = ("GET",url);   //初始化request
+    request.send = (null);        //发送request
+}
+```
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> master
+>>>>>>> master
+
+##URL
+> ​        统一资源定位符是对可以从互联网上得到的资源的位置和访问方法的一种简洁的表示，是互联网上标准资源的地址。互联网上的每个文件都有一个唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它。
+>
+> ### 绝对URL
+>
+> ​       绝对URL（absolute URL）**显示文件的完整路径**，这意味着绝对URL本身所在的位置与被引用的实际文件的位置无关，
+>
+> ### 相对URL
+>
+> ​        相对URL（relative URL）**以包含URL本身的文件夹的位置为参考点**，描述目标文件夹的位置。如果目标文件与当前页面（也就是包含URL的页面）在同一个目录，那么这个文件的相对URL仅仅是文件名和扩展名，如果目标文件在当前目录的子目录中，那么它的相对URL是子目录名，后面是斜杠，然后是目标文件的文件名和扩展名。
+>
+> ​        如果要引用文件层次结构中更高层目录中的文件，那么使用两个句点和一条斜杠。可以组合和重复使用两个句点和一条斜杠，从而引用当前文件所在的硬盘上的任何文件，
+>
+> ​        一般来说，对于同一服务器上的文件，应该总是使用相对URL，它们更容易输入，而且在将页面从本地系统转移到服务器上时更方便，只要每个文件的相对位置保持不变，链接就仍然是有效地。
 
 
 

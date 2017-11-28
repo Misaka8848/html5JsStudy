@@ -21,5 +21,12 @@
 | p                                        | <p>（和其他所有）元素对象                           |
 | ---------------------------------------- | ---------------------------------------- |
 | innerHTML<br/>childElementCount<br/>firstChild<br/> | 元素的内容<br/>元素的子元素数目<br/>第一个子元素<br/>       |
-| appendChild<br/>insertBefore<br/>setAttribute<br/>getAttribute<br/> | 插入元素作为this元素的子元素<br/>同上<br/>设置Attribute<br/>获取Attribute<br/> |
+| appendChild<br/>insertBefore<br/>setAttribute("class","className")<br/>getAttribute<br/> | 插入元素作为this元素的子元素<br/>同上<br/>设置Attribute<br/>获取Attribute<br/> |
+
+4.JSON
+
+| JSON                |                                      |
+| ------------------- | ------------------------------------ |
+|                     |                                      |
+| stringify<br/>parse | 将对象转为字符串<br/>将串转回对象或对象数组（数组的每一项都是对象） |
 

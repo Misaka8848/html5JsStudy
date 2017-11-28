@@ -381,5 +381,19 @@ window.onload = function(){          //类似于main函数
 
 
 
+## Json
 
+
+
+## 跨域访问
+
+###概述
+
+如果页面在服务器 1 上，数据在服务器 2 上。根据**浏览器安全策略**用XMLHttpRequest就无法在服务器 1 上得到服务器 2 的数据。
+
+### 解决：JSONP
+
+JSONP是一种使用`<script>`标记获取JSON对象（数据）的方法。
+
+![JSONP跨域](img/JSONP跨域.png)
 

@@ -28,7 +28,9 @@
 
 ####[Chapter6: 通信 API](#Chapter6: 通信 API)
 
+### 附录
 
+URL参数
 
 
 
@@ -395,5 +397,29 @@ window.onload = function(){          //类似于main函数
 
 JSONP是一种使用`<script>`标记获取JSON对象（数据）的方法。
 
-![JSONP跨域](img/JSONP跨域.png)
+![Capture](img/Capture.PNG)
 
+##回调函数
+
+```javascript
+function updateSales(JSON){//回调函数  url参数 callback=updateSales
+  for(var i = 0;i < Datas.length;i++){ //从0开始 所以<length
+    Data = Datas[i];
+    Data
+  }
+}
+```
+
+## 定时器
+
+```javascript
+
+```
+
+## 脚本插入
+
+用新的URL替换src属性，浏览器不会把他看作是一个新的script元素，所以不会发出请求获取JSONP，要强制浏览器做出请求，必须创建这个新的script元素。这种技术称为“脚本插入”。
+
+## 浏览器缓存
+
+在URL末尾添加随机数，web服务器会忽略，但是能骗过浏览器

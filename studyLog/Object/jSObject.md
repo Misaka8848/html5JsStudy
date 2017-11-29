@@ -14,14 +14,14 @@
 | document                                 | 访问DOM对象，通过DOM连接HTML和JS                   |
 | ---------------------------------------- | ---------------------------------------- |
 | domain<br/>title<br/>URL<br/>            | 文档服务器的域名<br/>文档的标题<br/> 文档的URL<br/>      |
-| getElementById<br/>getElementsByTagName<br/>getElementsByClassName<br/>createElement<br/> | 根据id获得元素<br/>根据tag(HTML tag)获得元素<br/>根据class获得元素<br/>创建DOM中的元素<br/> |
+| getElementById<br/>getElementsByTagName<br/>getElementsByClassName<br/>createElement<br/> | 根据id获得元素<br/>根据tag(HTML tag)获得元素,**返回一个数组**<br/>根据class获得元素<br/>创建DOM中的元素<br/> |
 
 3.p(element object)
 
 | p                                        | <p>（和其他所有）元素对象                           |
 | ---------------------------------------- | ---------------------------------------- |
 | innerHTML<br/>childElementCount<br/>firstChild<br/> | 元素的内容<br/>元素的子元素数目<br/>第一个子元素<br/>       |
-| appendChild<br/>insertBefore<br/>setAttribute("class","className")<br/>getAttribute<br/> | 插入元素作为this元素的子元素<br/>同上<br/>设置Attribute<br/>获取Attribute<br/> |
+| appendChild<br/>replaceChlid(newChild, oldChild)<br/>insertBefore<br/>setAttribute("class","className")<br/>getAttribute<br/> | 插入元素作为this元素的子元素<br/>用新的替换旧的<br/>插入元素作为this元素的子元素<br/>设置Attribute<br/>获取Attribute<br/> |
 
 4.JSON
 
@@ -30,3 +30,6 @@
 |                     |                                      |
 | stringify<br/>parse | 将对象转为字符串<br/>将串转回对象或对象数组（数组的每一项都是对象） |
 
+```
+setInterval(handleRefresh, 300);//(调用函数,毫秒)
+```
